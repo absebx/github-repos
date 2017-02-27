@@ -12,6 +12,7 @@ export class RepositoriesComponent implements OnInit {
   repositories : any = [];
 
   repository : IRepository;
+  newRepository : IRepository={name:"", description:""};
 
   constructor() { }
 
@@ -29,6 +30,11 @@ export class RepositoriesComponent implements OnInit {
 
   setMainRepository(repository){
     this.repository=repository;
+  }
+
+  addNewRepo(){
+    this.repositories.unshift(this.newRepository);
+    this.newRepository = {name:"", description:""};
   }
 }
 
