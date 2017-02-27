@@ -4,7 +4,7 @@
       <li class="collection-item indigo white-text" [hidden]="repositories.length > 0">
         Cargando repositorios...
       </li>
-      <li class="collection-item red accent-2 white-text" [hidden]="!repository">
+      <li class="collection-item red accent-2 white-text" [hidden]="repository.name.length == 0">
         <h2>{{repository.name}}</h2>
         <p>{{repository.description}}</p>
       </li>
