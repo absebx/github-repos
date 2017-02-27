@@ -5,13 +5,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './repositories.component.html',
   styleUrls: ['./repositories.component.css']
 })
+
+
 export class RepositoriesComponent implements OnInit {
 
   repositories : any = [];
 
+  repository : IRepository;
+
   constructor() { }
 
   ngOnInit() {
+
+    this.repository = {name: "Angular curso de abner", description: "Proyecto de prueba que hace el abner"};
     setTimeout(()=>{
       this.repositories = [
         {name: "Angular curso de abner", description: "Proyecto de prueba que hace el abner"},
@@ -19,10 +25,14 @@ export class RepositoriesComponent implements OnInit {
         {name: "Mesclador de datos", description: "mesclador de datos web"}
       ];
     },2000);
-
-    setTimeout(()=>{
-      this.repositories = [];
-    },5000);
   }
 
+  setMainRepository(repository){
+    this.repository=repository;
+  }
+}
+
+interface IRepository{
+  name: String,
+  description: String
 }
